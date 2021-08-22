@@ -1,5 +1,5 @@
 {
-  "countdown": {
-    "component": "Countdown"
+  "formulario": {
+    "component": "formulario"
   }
 }

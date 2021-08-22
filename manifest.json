@@ -1,9 +1,9 @@
 {
-  "vendor": "vtex",
-  "name": "countdown",
+  "vendor": "hiringcoders2021",
+  "name": "formguiaech",
   "version": "0.0.1",
   "title": "Countdown",
-  "description": "Countdown component",
+  "description": "form",
   "defaultLocale": "pt-BR",
   "builders": {
     "messages": "1.x",
