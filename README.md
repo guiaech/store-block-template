@@ -1,3 +1,1 @@
-# Store Block course template
-
-Here you'll learn how to create awesome Store Framework blocks!
+Este é o APP tabela que tem integração com a API da AWS e seus dados são salvos no banco de dados DyanamoDB.
