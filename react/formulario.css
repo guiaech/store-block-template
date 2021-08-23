@@ -1,13 +1,16 @@
-#area
+
+
+fieldset
 {
-  position:relative;
-  left:37%;
-  top:29%;
-  width:320px;
-  height:270px;
+  max-width:1255px;
+  min-width: 660px;
+  height:150px;
+  background-color:cadetblue
 }
-#area #formulario
-{
-  position:absolute;
-  display:block;
+
+p{
+  color:white;
+  background-color:black;
+
 }
+
