@@ -1,16 +1,51 @@
 
 
-fieldset
-{
-  max-width:1255px;
-  min-width: 660px;
-  height:150px;
-  background-color:cadetblue
+fieldset{
+  padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: block;
+    margin-top: 0em;
 }
 
-p{
-  color:white;
-  background-color:black;
+
+label{
+ 
+
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  padding: 1px 2px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+
+}
+
+
+input {
+  background-color: inherit;
+  width: 100%;
+  font-size: 1.8rem;
+  color: #000;
+  font-family: Circular Std Bold,sans-serif;
+  border: none;
+  border-bottom: 2px solid rgba(0,0,0,.15);
+  padding: 2rem 0 1.8rem;
+  transition: opacity .3s ease-in-out;
 
 }
 

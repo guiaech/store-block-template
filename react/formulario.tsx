@@ -2,19 +2,28 @@ import './formulario.css'
 import axios from 'axios'
 import * as React from 'react'
 
+var data = new Date();
+var dia = String(data.getDate()).padStart(2, '0');
+var mes = String(data.getMonth() + 1).padStart(2, '0');
+var ano = data.getFullYear();
+const dataAtual = dia + '/' + mes + '/' + ano;
 
+
+var cad = 'cadastrado'
 
 class formulario extends React.Component<any, any> {
   constructor(props) {
     super(props);
-    this.state = { id: '', name: '', mail: '', number: '' };
+    this.state = { id: '', name: '', mail: '', number: '' , date: '', leds:''};
 
     this.handleChangeI = this.handleChangeI.bind(this);
     this.handleChangeN = this.handleChangeN.bind(this);
     this.handleChangeM = this.handleChangeM.bind(this);
     this.handleChangeU = this.handleChangeU.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
   }
+  
 
   handleChangeI(event) {
     this.setState({ id: event.target.value });
@@ -28,6 +37,8 @@ class formulario extends React.Component<any, any> {
   handleChangeU(event) {
     this.setState({ number: event.target.value });
   }
+  
+
 
   handleSubmit(event) {
     event.preventDefault();
@@ -35,14 +46,18 @@ class formulario extends React.Component<any, any> {
     const id = this.state.id;
     const number = this.state.number;
     const mail = this.state.mail;
+    const date = dataAtual;
+    const leds = cad;
     axios({
       method: 'put',
-      url: 'https://lu6sssgep1.execute-api.us-east-2.amazonaws.com/items',
+      url: 'https://lqbi4t23pj.execute-api.us-west-2.amazonaws.com/items',
       data: {
         id: id,
         name: name,
         number: number,
-        mail: mail
+        mail: mail,
+        date: date,
+        leds: leds
       }
     });
     let content = document.getElementById('area')
@@ -61,31 +76,33 @@ class formulario extends React.Component<any, any> {
 
   render() {
     return (
+      <section class="contact-area">
       <div id ="area">
         <fieldset>
         <h3>Cadastro de clientes</h3>
         <form onSubmit={this.handleSubmit} id="formulario">
 
           <label>
-            Identidade   :
+            Identindade:
             <input type="text" value={this.state.id} onChange={this.handleChangeI} />
           </label>
           <label>
-            Nome completo  :
+            Nome:
             <input type="text" value={this.state.name} onChange={this.handleChangeN} />
           </label>
           <label>
-            Telefone  :
+            Telefone:
             <input type="number" value={this.state.number} onChange={this.handleChangeU} />
           </label>
           <label>
-            E-mail  :
+            Email:
             <input type="text" value={this.state.mail} onChange={this.handleChangeM} />
           </label>
           <input type="submit" value="Enviar" />
         </form>
         </fieldset>
       </div>
+      </section>
     );
   }
 }
