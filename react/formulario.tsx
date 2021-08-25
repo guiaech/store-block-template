@@ -2,12 +2,7 @@ import './formulario.css'
 import axios from 'axios'
 import * as React from 'react'
 
-var data = new Date();
-var dia = String(data.getDate()).padStart(2, '0');
-var mes = String(data.getMonth() + 1).padStart(2, '0');
-var ano = data.getFullYear();
-const dataAtual = dia + '/' + mes + '/' + ano;
-
+var testeData = Date()
 
 var cad = 'cadastrado'
 
@@ -46,7 +41,7 @@ class formulario extends React.Component<any, any> {
     const id = this.state.id;
     const number = this.state.number;
     const mail = this.state.mail;
-    const date = dataAtual;
+    const date = testeData;
     const leds = cad;
     axios({
       method: 'put',
