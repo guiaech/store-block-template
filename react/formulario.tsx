@@ -9,13 +9,14 @@ var cad = 'cadastrado'
 class formulario extends React.Component<any, any> {
   constructor(props) {
     super(props);
-    this.state = { id: '', name: '', mail: '', number: '' , date: '', leds:''};
+    this.state = { id: '', name: '', empresa: '', number: '' , date: '', leds:'', recado:''};
 
     this.handleChangeI = this.handleChangeI.bind(this);
     this.handleChangeN = this.handleChangeN.bind(this);
     this.handleChangeM = this.handleChangeM.bind(this);
     this.handleChangeU = this.handleChangeU.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeR = this.handleChangeR.bind(this);
 
   }
   
@@ -27,10 +28,13 @@ class formulario extends React.Component<any, any> {
     this.setState({ name: event.target.value });
   }
   handleChangeM(event) {
-    this.setState({ mail: event.target.value });
+    this.setState({ empresa: event.target.value });
   }
   handleChangeU(event) {
     this.setState({ number: event.target.value });
+  }
+  handleChangeR(event) {
+    this.setState({ recado: event.target.value });
   }
   
 
@@ -40,9 +44,10 @@ class formulario extends React.Component<any, any> {
     const name = this.state.name;
     const id = this.state.id;
     const number = this.state.number;
-    const mail = this.state.mail;
+    const empresa = this.state.empresa;
     const date = testeData;
     const leds = cad;
+    const recado = this.state.recado;
     axios({
       method: 'put',
       url: 'https://lqbi4t23pj.execute-api.us-west-2.amazonaws.com/items',
@@ -50,9 +55,10 @@ class formulario extends React.Component<any, any> {
         id: id,
         name: name,
         number: number,
-        mail: mail,
+        empresa: empresa,
         date: date,
-        leds: leds
+        leds: leds,
+        recado : recado
       }
     });
     let content = document.getElementById('area')
@@ -78,7 +84,7 @@ class formulario extends React.Component<any, any> {
         <form onSubmit={this.handleSubmit} id="formulario">
 
           <label>
-            Identindade:
+            E-mail:
             <input type="text" value={this.state.id} onChange={this.handleChangeI} />
           </label>
           <label>
@@ -90,8 +96,12 @@ class formulario extends React.Component<any, any> {
             <input type="number" value={this.state.number} onChange={this.handleChangeU} />
           </label>
           <label>
-            Email:
-            <input type="text" value={this.state.mail} onChange={this.handleChangeM} />
+            Empresa:
+            <input type="text" value={this.state.empresa} onChange={this.handleChangeM} />
+          </label>
+          <label>
+            Recado:
+            <input type="recado" value={this.state.recado} onChange={this.handleChangeR} />
           </label>
           <input type="submit" value="Enviar" />
         </form>
@@ -102,7 +112,5 @@ class formulario extends React.Component<any, any> {
   }
 }
 
+
 export default formulario
-
-
-
