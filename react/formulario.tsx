@@ -4,12 +4,11 @@ import * as React from 'react'
 
 var testeData = Date()
 
-var cad = 'cadastrado'
 
 class formulario extends React.Component<any, any> {
   constructor(props) {
     super(props);
-    this.state = { id: '', name: '', empresa: '', number: '' , date: '', leds:'', recado:''};
+    this.state = { id: '', name: '', empresa: '', number: '' , leds:'', recado:''};
 
     this.handleChangeI = this.handleChangeI.bind(this);
     this.handleChangeN = this.handleChangeN.bind(this);
@@ -45,8 +44,7 @@ class formulario extends React.Component<any, any> {
     const id = this.state.id;
     const number = this.state.number;
     const empresa = this.state.empresa;
-    const date = testeData;
-    const leds = cad;
+    const leds = testeData;
     const recado = this.state.recado;
     axios({
       method: 'put',
@@ -56,7 +54,6 @@ class formulario extends React.Component<any, any> {
         name: name,
         number: number,
         empresa: empresa,
-        date: date,
         leds: leds,
         recado : recado
       }
@@ -80,30 +77,35 @@ class formulario extends React.Component<any, any> {
       <section class="contact-area">
       <div id ="area">
         <fieldset>
-        <h3>Cadastro de clientes</h3>
+        <h3>Estamos aqui para o que precisar!</h3>
+        <p>Deixe seus dados com a gente que entraremos em contato.</p>
+
         <form onSubmit={this.handleSubmit} id="formulario">
 
-          <label>
-            E-mail:
-            <input type="text" value={this.state.id} onChange={this.handleChangeI} />
-          </label>
-          <label>
-            Nome:
-            <input type="text" value={this.state.name} onChange={this.handleChangeN} />
-          </label>
-          <label>
-            Telefone:
-            <input type="number" value={this.state.number} onChange={this.handleChangeU} />
-          </label>
-          <label>
-            Empresa:
-            <input type="text" value={this.state.empresa} onChange={this.handleChangeM} />
-          </label>
-          <label>
-            Recado:
-            <input type="recado" value={this.state.recado} onChange={this.handleChangeR} />
-          </label>
-          <input type="submit" value="Enviar" />
+            <div>
+              <input type="text" id="email" name="email" placeholder="E-mail" value={this.state.id} onChange={this.handleChangeI} />
+            </div>
+
+            <div>
+            <input type="text" id="nome" name="nome" placeholder="Nome" value={this.state.name} onChange={this.handleChangeN} />
+            </div>
+
+            <div>
+            <input type="number" id="telefone" name="telefone" placeholder="Telefone" value={this.state.number} onChange={this.handleChangeU} />
+            </div>
+
+            <div>
+            <input type="text" id="empresa" name="empresa" placeholder="Empresa" value={this.state.empresa} onChange={this.handleChangeM} />
+            </div>
+            
+            <div>
+            <input type="recado" id="mensagem" name="mensagem" placeholder="Mensagem" value={this.state.recado} onChange={this.handleChangeR} />
+            </div>
+
+            <button type="submit" value="enviar">
+          Enviar
+        </button>
+
         </form>
         </fieldset>
       </div>
