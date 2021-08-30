@@ -1,0 +1,57 @@
+.container {
+    width: 100%;
+    height: 400px;
+    display: inline;
+    justify-content:center;
+    background-image: linear-gradient(to right, white, rgb(153, 150, 150));
+    min-width: 550px;
+    margin-top: 100px;
+  
+}
+
+.fieldset{
+    width: 250px;
+    background: linear-gradient(rgb(129, 126, 126), white);
+    border-radius: 15px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding-top: 30px;
+    color: #fff;
+    align-items: center;
+    line-height: 50px;
+    border-style: none;
+    margin-top: 200px;
+}
+
+.legend {
+    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(10, 10, 10);
+    font-size: large;
+}
+
+input {
+    position: auto;
+    width: 87%;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 50px;
+}
+
+.btnsubmit {
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 50px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(black, rgb(44, 43, 43));
+    cursor: pointer;
+  }

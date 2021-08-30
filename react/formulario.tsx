@@ -6,9 +6,9 @@ var testeData = Date()
 
 
 class formulario extends React.Component<any, any> {
-  constructor(props) {
+  constructor(props :) {
     super(props);
-    this.state = { id: '', name: '', empresa: '', number: '' , leds:'', recado:''};
+    this.state = { id: '', name: '', empresa: '', number: '' , leads:'', recado:''};
 
     this.handleChangeI = this.handleChangeI.bind(this);
     this.handleChangeN = this.handleChangeN.bind(this);
@@ -44,7 +44,7 @@ class formulario extends React.Component<any, any> {
     const id = this.state.id;
     const number = this.state.number;
     const empresa = this.state.empresa;
-    const leds = testeData;
+    const leads = testeData;
     const recado = this.state.recado;
     axios({
       method: 'put',
@@ -54,7 +54,7 @@ class formulario extends React.Component<any, any> {
         name: name,
         number: number,
         empresa: empresa,
-        leds: leds,
+        leads: leads,
         recado : recado
       }
     });
