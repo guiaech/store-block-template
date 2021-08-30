@@ -1,13 +1,13 @@
 
 
-# Integraçao API AWS
+# COMPONENTE REACT (FORMULÁRIO)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## O que isto faz?
 
-Este app fornece uma tabela para ser integrada em um site, os dados que são inseridos nessa tabela são enviados para API GATEWAY da AWS que regitra os dados no banco de dados DynamoDB.
+Este app fornece uma tabela para ser integrada em um site, os dados que são inseridos nessa tabela são enviados para API GATEWAY da AWS que registra os dados no banco de dados DynamoDB.
 
 ## Dependências
 - AWS API Externa
